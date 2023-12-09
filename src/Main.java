@@ -1,5 +1,25 @@
+import enums.UsageType;
+import enums.UtilityType;
+import interfaces.Mappable;
+import models.Building;
+import models.UtilityLine;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        List<Mappable> mappables = new ArrayList<>();
+
+        mappables.add(new Building("Sydney town hall", UsageType.GOVERNMENT));
+        mappables.add(new Building("Sydney Opera House", UsageType.ENTERTAINMENT));
+        mappables.add(new Building("Stadium Australia", UsageType.SPORTS));
+
+        mappables.add(new UtilityLine("College St", UtilityType.FIBER_OPTIC));
+        mappables.add(new UtilityLine("Olympic Blvd", UtilityType.WATER));
+        for (var m: mappables) {
+            Mappable.mapIt(m);
+        }
     }
 }

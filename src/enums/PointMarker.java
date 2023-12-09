@@ -1,3 +1,5 @@
+package enums;
+
 public enum PointMarker {
     CIRCLE,
     PUSH_PIN,
